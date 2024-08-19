@@ -35,4 +35,7 @@ def create_app(config_class=Config):
     from app.prioritaet import bp as prioritaet_bp
     app.register_blueprint(prioritaet_bp, url_prefix='/prioritaet')
 
+    from app.errors import bp as errors_bp
+    app.register_blueprint(errors_bp)
+
     return app

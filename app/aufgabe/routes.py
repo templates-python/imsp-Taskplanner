@@ -76,5 +76,8 @@ def delete_aufgabe(id):
     db.session.commit()
     return '', 204
 
-
+@bp.route('/uv')
+def undefined_variable():
+    # This will raise a NameError because 'undefined_var' is not defined
+    raise Exception("Intentional 500 error for testing purposes.")
 
