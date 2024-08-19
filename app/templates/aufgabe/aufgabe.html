@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Eine Seite zur Verwaltung von Aufgaben.">
+    <meta name="keywords" content="Aufgaben, Verwaltung, ToDo">
+    <title>Aufgabe</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 0;
+            line-height: 1.6;
+        }
+        h1 {
+            color: #333;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Aufgabenliste</h1>
+    </header>
+    <main>
+        {% if aufgaben %}
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Title</th>
+                        <th>Beginn</th>
+                        <th>Ende</th>
+                        <th>Ort</th>
+                        <th>Notiz</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for aufgabe in aufgaben %}
+                        <tr>
+                            <td>{{ aufgabe.aufgabeid }}</td>
+                            <td>{{ aufgabe.titel }}</td>
+                            <td>{{ aufgabe.beginn }}</td>
+                            <td>{{ aufgabe.ende }}</td>
+                            <td>{{ aufgabe.ort }}</td>
+                            <td>{{ aufgabe.notiz }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        {% else %}
+            <p>Keine Aufgaben vorhanden.</p>
+        {% endif %}
+    </main>
+</body>
+</html>
