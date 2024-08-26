@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>{% block title %} {% endblock %} - FlaskApp</title>
+    <!-- <title>{% block title %} {% endblock %} - FlaskApp</title> -->
     <style>
         h2 {
             width: 100%;
@@ -46,9 +46,7 @@
 <body>
     <nav>
         <a href="{{ url_for('main.index') }}">FlaskApp</a>
-        <a href="#">Aufgabe</a>
-        <a href="#">AufgabeMaterial</a>
-        <a href="#">Datei</a>
+        <a href="{{ url_for('aufgabe.index') }}">Aufgabe</a>
     </nav>
     <hr>
     <div class="content">
