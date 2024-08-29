@@ -34,3 +34,5 @@ Um mehr Ausgaben zu erhalten, aktiviere den debug mode:
 ```bash
 flask run --debugger --reload
 ```
+
+Oder via run.py einfach starten.

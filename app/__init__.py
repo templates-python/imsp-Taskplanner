@@ -2,6 +2,7 @@ from flask import Flask
 from config import Config
 from app.extensions import db
 
+
 def create_app(config_class=Config):
     app = Flask(__name__)
     app.config.from_object(config_class)
@@ -33,5 +34,8 @@ def create_app(config_class=Config):
 
     from app.prioritaet import bp as prioritaet_bp
     app.register_blueprint(prioritaet_bp, url_prefix='/prioritaet')
+
+    from app.errors import bp as errors_bp
+    app.register_blueprint(errors_bp)
 
     return app
