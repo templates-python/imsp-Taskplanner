@@ -11,9 +11,12 @@ class Aufgabe(db.Model):
     ort = db.Column(db.String(250), nullable=True)
     koordinaten = db.Column(db.String(100), nullable=True)
     notiz = db.Column(db.Text, nullable=True)
-    kategorieid = db.Column(db.Integer, db.ForeignKey('kategorie.kategorieid'), nullable=False)
-    prioritaetid = db.Column(db.Integer, db.ForeignKey('prioritaet.prioritaetid'), nullable=False)
-    fortschrittid = db.Column(db.Integer, db.ForeignKey('fortschritt.fortschrittid'), nullable=False)
+    kategorieid = db.Column(db.Integer, nullable=False)
+    prioritaetid = db.Column(db.Integer, nullable=False)
+    fortschrittid = db.Column(db.Integer, nullable=False)
+    # kategorieid = db.Column(db.Integer, db.ForeignKey('kategorie.kategorieid'), nullable=False)
+    # prioritaetid = db.Column(db.Integer, db.ForeignKey('prioritaet.prioritaetid'), nullable=False)
+    # fortschrittid = db.Column(db.Integer, db.ForeignKey('fortschritt.fortschrittid'), nullable=False)
 
     def __repr__(self):
         return f'<Aufgabe {self.title}>'

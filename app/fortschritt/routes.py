@@ -15,9 +15,9 @@ def index():
 
 # GET ohne ID (alle Fortschrittn abrufen)
 @bp.route('/', methods=['GET'])
-def get_fortschrittn():
-    fortschrittn = Fortschritt.query.all()
-    return jsonify([fortschritt.to_dict() for fortschritt in fortschrittn])
+def get_fortschritte():
+    fortschritte = Fortschritt.query.all()
+    return jsonify([fortschritt.to_dict() for fortschritt in fortschritte])
 
 # GET mit ID (eine spezifische Fortschritt abrufen)
 @bp.route('/<int:id>', methods=['GET'])

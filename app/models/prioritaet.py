@@ -11,7 +11,7 @@ class Prioritaet(db.Model):
         return f'<Prioritaet {self.title}>'
 
     # Hilfsfunktion zur Konvertierung des Modells in ein Dictionary
-    def prioritaet_to_dict(self):
+    def to_dict(self):
         return {
             'prioritaetid': self.prioritaetid,
             'prioritaet': self.prioritaet

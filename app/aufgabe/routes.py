@@ -31,11 +31,9 @@ def get_aufgabe(id):
 @bp.route('/', methods=['POST'])
 def create_aufgabe():
     data = request.get_json() or {}
-    if 'title' not in data or not data['title']:
-        return abort(400, 'Title is required')
 
     aufgabe = Aufgabe(
-        seriemasterid=data.get('seriemasterid',0),
+        seriemasterid=data.get('seriemasterid',None),
         titel=data.get('titel'),
         beginn=data.get('beginn'),
         ende=data.get('ende'),
