@@ -6,7 +6,7 @@ class Datei(db.Model):
     dateiid = db.Column(db.Integer, primary_key=True)
     dateipfad = db.Column(db.String(250), nullable=False)
     dateiblob = db.Column(db.LargeBinary, nullable=True)
-    aufgabeid = db.Column(db.Integer, db.ForeignKey('aufgabe.aufgabeid'), nullable=False)
+    aufgabeid = db.Column(db.Integer, nullable=False)
 
     def __repr__(self):
         return f'<Datei {self.title}>'

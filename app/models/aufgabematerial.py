@@ -3,8 +3,8 @@ from app.extensions import db
 class Aufgabematerial(db.Model):
     __tablename__ = "Aufgabematerial"
 
-    aufgabeid = db.Column(db.Integer, db.ForeignKey('aufgabe.aufgabeid'), nullable=False, primary_key=True)
-    materialid = db.Column(db.Integer, db.ForeignKey('material.materialid'), nullable=False,  primary_key=True)
+    aufgabeid = db.Column(db.Integer, nullable=False, primary_key=True)
+    materialid = db.Column(db.Integer, nullable=False,  primary_key=True)
     anzahl = db.Column(db.Integer, nullable=True)
 
     def __repr__(self):
