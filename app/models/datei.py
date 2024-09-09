@@ -5,7 +5,6 @@ class Datei(db.Model):
 
     dateiid = db.Column(db.Integer, primary_key=True)
     dateipfad = db.Column(db.String(250), nullable=False)
-    dateiblob = db.Column(db.LargeBinary, nullable=True)
     aufgabeid = db.Column(db.Integer, nullable=False)
 
     def __repr__(self):
@@ -14,8 +13,8 @@ class Datei(db.Model):
     # Hilfsfunktion zur Konvertierung des Modells in ein Dictionary
     def to_dict(self):
         return {
+            'dateiid': self.dateiid,
             'dateipfad': self.dateipfad,
-            'dateiblob': self.dateiblob,
             'aufgabeid': self.aufgabeid
         }
 

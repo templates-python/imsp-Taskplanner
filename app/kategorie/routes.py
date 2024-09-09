@@ -1,7 +1,5 @@
-from flask import Blueprint
 from flask import request
 from flask import jsonify
-from flask import abort
 from flask import render_template
 
 from app.kategorie import bp

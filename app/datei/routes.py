@@ -1,7 +1,5 @@
-from flask import Blueprint
 from flask import request
 from flask import jsonify
-from flask import abort
 from flask import render_template
 
 from app.datei import bp
@@ -31,7 +29,6 @@ def create_datei():
     data = request.get_json() or {}
     datei = Datei(
         dateipfad=data.get('dateipfad'),
-        dateiblob=data.get('dateiblob'),
         aufgabeid=data.get('aufgabeid')
     )
     db.session.add(datei)
@@ -44,7 +41,6 @@ def update_datei(id):
     datei = Datei.query.get_or_404(id)
     data = request.get_json() or {}
     if 'dateipfad' in data: datei.dateipfad = data['dateipfad']
-    if 'dateiblob' in data: datei.dateiblob = data['dateiblob']
     if 'aufgabeid' in data: datei.aufgabeid = data['aufgabeid']
     db.session.commit()
     return jsonify(datei.to_dict())
